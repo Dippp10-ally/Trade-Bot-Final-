@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head><meta charset='UTF-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>MT5 Login</title>
+<style>body{font-family:Segoe UI;background:#080c14;color:#e8e4d8;display:grid;place-items:center;height:100vh}.card{background:#0f1a2e;border:1px solid #1e3050;border-radius:12px;padding:20px;width:380px}input{width:100%;padding:10px;margin:6px 0 12px;background:#111f35;border:1px solid #1e3050;color:#fff;border-radius:8px}button{padding:10px 12px;border-radius:8px;border:0;cursor:pointer}.gold{background:#d4a843;color:#080c14;font-weight:700;width:100%}.link{margin-top:10px;background:#111f35;color:#f0c060;width:100%;border:1px solid #1e3050}</style></head>
+<body>
+<div class='card'>
+<h3>MT5 Access</h3>
+<p>Enter MT5 credentials and copy into backend <code>.env</code>.</p>
+<label>MT5_LOGIN</label><input id='login' />
+<label>MT5_PASSWORD</label><input id='password' type='password' />
+<label>MT5_SERVER</label><input id='server' />
+<button class='gold' onclick='generate()'>Generate .env Snippet</button>
+<pre id='out'></pre>
+<button class='link' onclick='window.location.href="/"'>Back to Dashboard</button>
+</div>
+<script>
+function generate(){const txt=`MT5_LOGIN=${login.value}\nMT5_PASSWORD=${password.value}\nMT5_SERVER=${server.value}\nSYMBOL=XAUUSD`;out.textContent=txt;}
+</script>
+</body>
+</html>
